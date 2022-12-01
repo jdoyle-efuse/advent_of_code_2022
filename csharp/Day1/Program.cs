@@ -18,6 +18,9 @@ foreach (var line in inputLines)
     }
 }
 
+if (runningTotal > 0)
+    segmentTotals.Add(runningTotal);
+
 Console.WriteLine(segmentTotals.Max());
 
 segmentTotals = segmentTotals.OrderByDescending(x => x).ToList();
