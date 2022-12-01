@@ -26,6 +26,12 @@ int main() {
         }
     }
 
+    if (running_total > 0) {
+        segment_count++;
+        segments = realloc(segments, sizeof(long) * segment_count);
+        segments[segment_count - 1] = running_total;
+    }
+
     qsort(segments, segment_count, sizeof(int), compare_func);
 
     printf("%i\n", max_size(segments, segment_count));
